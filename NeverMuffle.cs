@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using HutongGames.PlayMaker;
+﻿using HutongGames.PlayMaker;
 using Modding;
 using UnityEngine;
 
@@ -24,7 +23,7 @@ namespace NeverMuffle
         private void ChangeMuffle(AudioManager self)
         {
             var hdeFsm = self.gameObject.LocateMyFSM("Hero Damaged Effects");
-            var tlState = hdeFsm.FsmStates.First(x => x.Name.Equals("To Lowpass"));
+            var tlState = hdeFsm.Fsm.GetState("To Lowpass");
             tlState.Actions = new FsmStateAction[0];
         }
     }
